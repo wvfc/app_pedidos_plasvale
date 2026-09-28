@@ -1,0 +1,42 @@
+name: Gerar APK
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  apk:
+    name: Compilar APK de debug
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar o código
+        uses: actions/checkout@v4
+
+      - name: Instalar o JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Preparar o Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Preparar o Gradle (com cache)
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Compilar o APK
+        run: ./gradlew assembleDebug --stacktrace
+
+      - name: Publicar o APK como artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: pedidos-plasvale-debug
+          path: app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
+          retention-days: 30
