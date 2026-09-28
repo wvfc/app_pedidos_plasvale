@@ -12,6 +12,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/azul_plasvale"
         android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+        app:popupTheme="@style/Tema.MenuPlasvale"
         app:title="@string/title_config"
         app:titleTextColor="@color/branco" />
 
@@ -41,29 +42,50 @@
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/campoRepresentante"
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nome"
-                    android:importantForAutofill="no"
-                    android:inputType="textCapWords" />
+                    android:layout_marginTop="8dp"
+                    android:hint="Nome">
 
-                <EditText
-                    android:id="@+id/campoTelefoneRep"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Telefone"
-                    android:importantForAutofill="no"
-                    android:inputType="phone" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/campoRepresentante"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:importantForAutofill="no"
+                        android:inputType="textCapWords" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <EditText
-                    android:id="@+id/campoEmailRep"
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="E-mail"
-                    android:importantForAutofill="no"
-                    android:inputType="textEmailAddress" />
+                    android:layout_marginTop="8dp"
+                    android:hint="Telefone">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/campoTelefoneRep"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:importantForAutofill="no"
+                        android:inputType="phone" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="E-mail">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/campoEmailRep"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:importantForAutofill="no"
+                        android:inputType="textEmailAddress" />
+                </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -82,28 +104,49 @@
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Valores já preenchidos ao abrir um novo pedido. Podem ser alterados em cada pedido."
+                    android:textColor="@color/texto_fraco"
+                    android:textSize="11sp" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <EditText
-                        android:id="@+id/campoIpiPadrao"
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
                         android:layout_weight="1"
-                        android:hint="IPI %"
-                        android:importantForAutofill="no"
-                        android:inputType="numberDecimal" />
+                        android:hint="IPI padrão (%)">
 
-                    <EditText
-                        android:id="@+id/campoDescontoPadrao"
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/campoIpiPadrao"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:importantForAutofill="no"
+                            android:inputType="numberDecimal" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:hint="Desconto %"
-                        android:importantForAutofill="no"
-                        android:inputType="numberDecimal" />
+                        android:hint="Desconto padrão (%)">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/campoDescontoPadrao"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:importantForAutofill="no"
+                            android:inputType="numberDecimal" />
+                    </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
 
                 <TextView

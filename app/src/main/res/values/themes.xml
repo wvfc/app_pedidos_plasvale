@@ -6,4 +6,15 @@
         <item name="android:colorBackground">@color/cinza_fundo</item>
         <item name="android:statusBarColor" tools:targetApi="21">@color/azul_escuro</item>
     </style>
+
+    <!--
+        Tema do menu suspenso da barra de título. A barra usa um tema escuro (texto branco),
+        e sem isto o menu herdava o texto branco sobre fundo branco: os itens ficavam invisíveis.
+    -->
+    <style name="Tema.MenuPlasvale" parent="ThemeOverlay.MaterialComponents.Light">
+        <item name="android:colorBackground">@color/branco</item>
+        <item name="android:textColorPrimary">@color/texto</item>
+        <item name="android:textColorSecondary">@color/texto_fraco</item>
+        <item name="android:textColor">@color/texto</item>
+    </style>
 </resources>

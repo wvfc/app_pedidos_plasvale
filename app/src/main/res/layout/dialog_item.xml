@@ -21,57 +21,106 @@
             android:id="@+id/textoInfoProduto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="10dp"
             android:textColor="@color/texto_fraco"
             android:textSize="12sp" />
 
-        <EditText
-            android:id="@+id/campoQuantidade"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Quantidade"
-            android:importantForAutofill="no"
-            android:inputType="number" />
+            android:hint="Quantidade (peças)">
 
-        <EditText
-            android:id="@+id/campoCor"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/campoQuantidade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Cor (opcional)"
-            android:importantForAutofill="no"
-            android:inputType="textCapWords" />
+            android:text="Informe em peças, em múltiplos do M.V. (embalagem). O app avisa se não for múltiplo."
+            android:textColor="@color/texto_fraco"
+            android:textSize="12sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Cor (opcional)">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/campoCor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                android:inputType="textCapWords" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Impostos e desconto deste item (já vêm das condições comerciais do pedido):"
+            android:textColor="@color/texto_fraco"
+            android:textSize="12sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/campoDescontoItem"
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
                 android:layout_weight="1"
-                android:hint="Desc. %"
-                android:importantForAutofill="no"
-                android:inputType="numberDecimal" />
+                android:hint="Desconto (%)">
 
-            <EditText
-                android:id="@+id/campoIpiItem"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="IPI %"
-                android:importantForAutofill="no"
-                android:inputType="numberDecimal" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/campoDescontoItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
-                android:id="@+id/campoStItem"
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:hint="IPI (%)">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/campoIpiItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="ST %"
-                android:importantForAutofill="no"
-                android:inputType="numberDecimal" />
+                android:hint="ST (%)">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/campoStItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
         <TextView

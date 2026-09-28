@@ -183,10 +183,11 @@ class PedidoActivity : AppCompatActivity() {
     private fun salvar(): Boolean {
         coletarCampos()
         if (pedido.cliente.isBlank()) {
-            binding.campoCliente.error = "Informe o cliente"
+            binding.caixaCliente.error = "Informe o cliente"
             binding.campoCliente.requestFocus()
             return false
         }
+        binding.caixaCliente.error = null
         repositorio.salvar(pedido)
         novo = false
         return true

@@ -12,6 +12,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/azul_plasvale"
         android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+        app:popupTheme="@style/Tema.MenuPlasvale"
         app:titleTextColor="@color/branco" />
 
     <ScrollView
@@ -38,79 +39,135 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
                     android:text="Dados do cliente"
                     android:textColor="@color/azul_plasvale"
-                    android:textSize="14sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/campoCliente"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/caixaCliente"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Cliente / razão social"
-                    android:importantForAutofill="no"
-                    android:inputType="textCapWords" />
+                    android:hint="Cliente / razão social">
 
-                <EditText
-                    android:id="@+id/campoCnpj"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/campoCliente"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:importantForAutofill="no"
+                        android:inputType="textCapWords" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="CNPJ"
-                    android:importantForAutofill="no"
-                    android:inputType="number" />
+                    android:layout_marginTop="8dp"
+                    android:hint="CNPJ">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/campoCnpj"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:importantForAutofill="no"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:orientation="horizontal">
 
-                    <EditText
-                        android:id="@+id/campoCidade"
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:hint="Cidade"
-                        android:importantForAutofill="no"
-                        android:inputType="textCapWords" />
+                        android:hint="Cidade">
 
-                    <Spinner
-                        android:id="@+id/spinnerUf"
-                        android:layout_width="96dp"
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/campoCidade"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:importantForAutofill="no"
+                            android:inputType="textCapWords" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="104dp"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="bottom" />
+                        android:layout_marginStart="8dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="UF do cliente"
+                            android:textColor="@color/texto_fraco"
+                            android:textSize="12sp" />
+
+                        <Spinner
+                            android:id="@+id/spinnerUf"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:orientation="horizontal">
 
-                    <EditText
-                        android:id="@+id/campoTelefone"
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
                         android:layout_weight="1"
-                        android:hint="Telefone"
-                        android:importantForAutofill="no"
-                        android:inputType="phone" />
+                        android:hint="Telefone">
 
-                    <EditText
-                        android:id="@+id/campoComprador"
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/campoTelefone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:importantForAutofill="no"
+                            android:inputType="phone" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:hint="Comprador"
-                        android:importantForAutofill="no"
-                        android:inputType="textCapWords" />
+                        android:hint="Comprador">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/campoComprador"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:importantForAutofill="no"
+                            android:inputType="textCapWords" />
+                    </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
 
-                <EditText
-                    android:id="@+id/campoTransportadora"
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Transportadora"
-                    android:importantForAutofill="no"
-                    android:inputType="textCapWords" />
+                    android:layout_marginTop="8dp"
+                    android:hint="Transportadora">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/campoTransportadora"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:importantForAutofill="no"
+                        android:inputType="textCapWords" />
+                </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
             <!-- Condições comerciais -->
@@ -127,13 +184,21 @@
                     android:layout_height="wrap_content"
                     android:text="Condições comerciais"
                     android:textColor="@color/azul_plasvale"
-                    android:textSize="14sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Valem para os próximos itens que você adicionar."
+                    android:textColor="@color/texto_fraco"
+                    android:textSize="12sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="8dp"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -158,13 +223,14 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
                         android:layout_weight="1"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Tabela"
+                            android:text="Tabela de preços"
                             android:textColor="@color/texto_fraco"
                             android:textSize="12sp" />
 
@@ -172,62 +238,108 @@
                             android:id="@+id/textoTabela"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingTop="12dp"
+                            android:paddingTop="10dp"
                             android:textColor="@color/texto"
-                            android:textSize="15sp" />
+                            android:textSize="14sp" />
                     </LinearLayout>
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="O prazo escolhe a coluna de preço da tabela (À Vista até 90 dias). Prazo maior, preço maior. Ao trocar o prazo, todos os itens já lançados são recalculados."
+                    android:textColor="@color/texto_fraco"
+                    android:textSize="12sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:orientation="horizontal">
 
-                    <EditText
-                        android:id="@+id/campoDesconto"
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
                         android:layout_weight="1"
-                        android:hint="Desconto %"
-                        android:importantForAutofill="no"
-                        android:inputType="numberDecimal" />
+                        android:hint="Desconto (%)">
 
-                    <EditText
-                        android:id="@+id/campoIpi"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:hint="IPI %"
-                        android:importantForAutofill="no"
-                        android:inputType="numberDecimal" />
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/campoDesconto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:importantForAutofill="no"
+                            android:inputType="numberDecimal" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                    <EditText
-                        android:id="@+id/campoSt"
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        android:hint="IPI (%)">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/campoIpi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:importantForAutofill="no"
+                            android:inputType="numberDecimal" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:hint="ST %"
-                        android:importantForAutofill="no"
-                        android:inputType="numberDecimal" />
+                        android:hint="ST (%)">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/campoSt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:importantForAutofill="no"
+                            android:inputType="numberDecimal" />
+                    </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:lineSpacingExtra="2dp"
+                    android:text="Desconto (%): abatimento sobre o preço de tabela — a planilha usa 20%.\nIPI (%): somado depois do desconto. Ex.: 6,5.\nST (%): substituição tributária, somada sobre o preço com IPI. Em SP deixe 0.\n\nA conta de cada item fica assim:\npreço de tabela − desconto = preço unitário\npreço unitário + IPI + ST = preço com ST\nvalor líquido = qtde × preço unitário   |   valor bruto = qtde × preço com ST"
+                    android:textColor="@color/texto_fraco"
+                    android:textSize="12sp" />
 
                 <Button
                     android:id="@+id/botaoAplicarCondicoes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="8dp"
                     android:backgroundTint="@color/azul_plasvale"
                     android:text="Aplicar a todos os itens"
                     android:textColor="@color/branco"
                     android:textSize="12sp" />
 
                 <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Use este botão para reaplicar desconto, IPI e ST nos itens que você já adicionou."
+                    android:textColor="@color/texto_fraco"
+                    android:textSize="12sp" />
+
+                <TextView
                     android:id="@+id/textoAviso"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_marginTop="10dp"
                     android:textColor="@color/laranja"
-                    android:textSize="11sp" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <!-- Itens -->
@@ -242,6 +354,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
                     android:orientation="horizontal">
 
                     <TextView
@@ -250,7 +363,7 @@
                         android:layout_weight="1"
                         android:text="Itens do pedido"
                         android:textColor="@color/azul_plasvale"
-                        android:textSize="14sp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <Button
@@ -274,9 +387,9 @@
                     android:id="@+id/textoSemItens"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="16dp"
                     android:gravity="center"
-                    android:text="Nenhum item adicionado."
+                    android:padding="16dp"
+                    android:text="Nenhum item adicionado.\nToque em ADICIONAR ITEM e busque pelo código ou pelo nome do produto."
                     android:textColor="@color/texto_fraco"
                     android:textSize="13sp" />
             </LinearLayout>
@@ -294,20 +407,27 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
                     android:text="Observação do pedido"
                     android:textColor="@color/azul_plasvale"
-                    android:textSize="14sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/campoObservacao"
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="top"
-                    android:hint="Ex.: entrega programada, contato do comprador..."
-                    android:importantForAutofill="no"
-                    android:inputType="textMultiLine|textCapSentences"
-                    android:minLines="3" />
+                    android:hint="Ex.: entrega programada, contato do comprador...">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/campoObservacao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="top"
+                        android:importantForAutofill="no"
+                        android:inputType="textMultiLine|textCapSentences"
+                        android:minLines="3" />
+                </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

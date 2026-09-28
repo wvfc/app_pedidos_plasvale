@@ -174,11 +174,11 @@ class PdfPedidoGenerator(private val context: Context) {
         y += 60f
 
         // Condições comerciais
+        // O desconto padrão não é impresso: ele aparece item a item na coluna DESC.
         campo(canvas, col1, y, "PRAZO DE PAGAMENTO", pedido.prazo)
-        campo(canvas, col1 + 150f, y, "DESCONTO PADRÃO", Formato.percentual(pedido.descontoPadrao))
-        campo(canvas, col1 + 290f, y, "IPI", Formato.percentual(pedido.ipiPercent))
-        campo(canvas, col1 + 380f, y, "ST", Formato.percentual(pedido.stPercent))
-        campo(canvas, col1 + 470f, y, "REPRESENTANTE", pedido.representante)
+        campo(canvas, col1 + 170f, y, "IPI", Formato.percentual(pedido.ipiPercent))
+        campo(canvas, col1 + 270f, y, "ST", Formato.percentual(pedido.stPercent))
+        campo(canvas, col1 + 370f, y, "REPRESENTANTE", pedido.representante)
 
         return y + 18f
     }
