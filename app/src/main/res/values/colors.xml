@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="azul_plasvale">#0B5394</color>
+    <color name="azul_escuro">#073763</color>
+    <color name="azul_claro">#E3EDF7</color>
+    <color name="laranja">#E07B00</color>
+    <color name="cinza_fundo">#F4F6F8</color>
+    <color name="texto">#1B1B1B</color>
+    <color name="texto_fraco">#5F6B76</color>
+    <color name="branco">#FFFFFF</color>
+    <color name="vermelho">#B3261E</color>
+</resources>

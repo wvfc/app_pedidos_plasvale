@@ -1,0 +1,1 @@
+# Regras padrão do projeto.
